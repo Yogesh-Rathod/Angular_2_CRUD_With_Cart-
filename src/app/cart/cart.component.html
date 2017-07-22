@@ -1,0 +1,18 @@
+<h1>Here is your cart!!</h1>
+
+<table class="table-responsive table-bordered">
+	<tr>
+		<th>no.</th>
+		<th>name</th>
+		<th>desc</th>
+		<th>quantity</th>
+		<th>total</th>
+	</tr>
+	<tr *ngFor="let item of cartItems; let i = index;">
+		<td>{{ i+1 }}</td>
+		<td>{{ item.name }}</td>
+		<td>{{ item.desc }}</td>
+		<td>{{ item.quantity }} * {{ item.price }}</td>
+		<td>{{ item.quantity * item.price }}</td>
+	</tr>
+</table>

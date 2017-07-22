@@ -1,0 +1,32 @@
+<div class="container">
+	<h1>Please Add Product Here!!!</h1>
+
+	<form #addProductForm="ngForm" (submit)="addProduct(addProductForm.value)" method="POST">
+
+
+		<div class="form-group">
+			<label>Product Name</label>
+			<input type="text" name="name" class="form-control" ngModel required>
+		</div>
+
+		<div class="form-group">
+			<label>Product Desc</label>
+			<input type="text" name="desc" class="form-control" ngModel required >
+		</div>
+
+		<div class="form-group">
+			<label>Product price</label>
+			<input type="number" name="price" class="form-control" ngModel required>
+		</div>
+
+		<div class="form-group">
+			<label>Product Image</label>
+			<input type="file" name="image" class="form-control" ngModel (change)="getProductImage($event)">
+		</div>
+
+		<div class="form-group">
+			<input type="submit" name="submit" class="btn btn-success" [disabled]="!addProductForm.valid">
+		</div>
+
+	</form>
+</div>
